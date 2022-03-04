@@ -1,5 +1,5 @@
-import AddressBookPkg.AddressBook;
-import AddressBookPkg.BuddyInfo;
+package AddressBookPkg;
+
 import org.junit.Test;
 
 import javax.persistence.*;
@@ -95,7 +95,7 @@ public class PersistTest {
 
         tx.commit();
 
-        Query q = em.createQuery("SELECT a FROM AddressBook a");
+        Query q = em.createQuery("SELECT a FROM AddressBookPkg a");
 
         //@SuppressWarnings("unchecked");
         List<AddressBook> results = q.getResultList();

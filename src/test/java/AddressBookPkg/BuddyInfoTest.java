@@ -1,4 +1,5 @@
-import AddressBookPkg.BuddyInfo;
+package AddressBookPkg;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -23,7 +23,7 @@ public class AddressBookController {
 
     }
 
-    @PostMapping("/")
+    @PostMapping("/addressBook")
     public AddressBook createAddressBook() {
         addressBook = new AddressBook();
         addressBook = bookRepo.save(addressBook);
