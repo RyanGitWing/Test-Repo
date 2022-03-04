@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <title>AddressBook</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>AddressBook</h1>
+<form action="#" th:action="@{/}" method="post" >
+    <p><input type="submit" value="Create AddressBook"/></p>
+</form>
+
+<h1>Submit a BuddyInfo</h1>
+<form action="#" th:action="@{'/}" th:object="${buddy}" method="post" id="buddyinfoform">
+    <p>Name: <input type="text" th:field="*{name}" id="name"/></p>
+    <p>Number: <input type="text" th:field="*{number}" id="number"/></p>
+    <p>Address: <input type="text" th:field="*{address}" id="address"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset" /></p>
+</form>
+
+<h1>BuddyList</h1>
+<table th:if="${validId}" border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Telephone</th>
+    </tr>
+    <tr th:each="buddyInfo : ${addressbook.buddyList}">
+        <td th:text="${buddyInfo.id}" id="tableID"></td>
+        <td th:text="${buddyInfo.name}" id="tableName"></td>
+        <td th:text="${buddyInfo.address}" id="tableAddress"></td>
+        <td th:text="${buddyInfo.number}" id="tableNumber"></td>
+    </tr>
+</table>
+</body>
+</html>
